@@ -78,9 +78,9 @@ WSGI_APPLICATION = 'thesnaps.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'thesnap-DB',
+        'NAME': 'DBname',
         'USER': 'postgres',
-        'PASSWORD': 'postgres-tancodes',
+        'PASSWORD': 'urpass',
         'HOST': 'localhost',
         'PORT': '5432',
     }
