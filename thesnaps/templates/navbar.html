@@ -1,0 +1,52 @@
+{% load static %}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
+<nav style="background: #101725;" class="navbar navbar-expand-lg navbar-dark py-0">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="/home"><img src="{% static 'images/logo3.png' %}" width="130" height="50" alt=""></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item mx-3">
+            <a class="text-white font-weight-bold" aria-current="page" href="/home"><i class='bx bxs-home p-1 rounded bg-white text-dark'></i> Home</a>
+          </li>
+          &nbsp;
+          <li class="nav-item mx-3">    
+            <a class="text-white font-weight-bold" data-bs-toggle="modal" data-bs-target="#staticBackdrop" href=""><i class='bx bxs-pizza p-1 rounded bg-white text-dark'></i> AboutUS</a>      
+          </li>
+
+        </ul>
+
+        <a class="nav-link text-white font-weight-bold" aria-current="page" href="/home/search"><i class='bx bx-search-alt-2 p-1 rounded bg-white text-dark'></i> Search</a>
+        
+        <a style=" font-size: 14px;" class="btn btn-outline-primary text-white" data-bs-toggle="offcanvas" href="#offcanvasExample" role="button" aria-controls="offcanvasExample">
+          Categories 🔽
+        </a>
+        
+        <div class="offcanvas offcanvas-start" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasExampleLabel" style="color: #6875e2;"> Choose by Categories</h5>
+            <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+            <div class="dropdown mt-3">
+
+              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown">
+                Choose by Categories
+              </button>
+
+              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                <li><a class="dropdown-item" href="/home">All images</a></li>
+                {% for c in cats %}
+                <li><a class="dropdown-item" href="/category/{{c.pk}}">{{c.title}}</a></li>
+                {% endfor %}
+                <li class="text-center bg-dark p-1"><a href="http://127.0.0.1:8000/admin/"  target="_blank" class=" text-center text-decoration-none text-white">
+                  <i style="background: none;" class='bx bxs-image-add'></i>Add Snaps</a>
+                </li>
+              </ul>
+      </div>
+    </div>
+
+  </nav>
+
